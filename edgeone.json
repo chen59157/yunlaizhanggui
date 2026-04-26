@@ -4,7 +4,7 @@
   "description": "外卖运营、品牌营销、电商运营，全链路增长引擎。从策略到执行，让每一家店都成为人气王。",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "installCommand": "npm install",
+  "installCommand": "npm install --legacy-peer-deps",
   "framework": "vite",
   "category": "website",
   "keywords": ["外卖运营", "品牌营销", "电商运营", "云莱掌柜"],
