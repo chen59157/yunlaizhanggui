@@ -1,18 +1,6 @@
 import { ECOMMERCE_CAPABILITIES, ECOMMERCE_PLATFORMS, ECOMMERCE_STATS } from '@/data/content';
 import { AnimateOnScroll, useCounter } from '@/hooks/useAnimations';
 
-function StatCard({ value, suffix, label }: { value: number; suffix: string; label: string }) {
-  const { count, ref } = useCounter(value, 2000);
-  return (
-    <div className="rounded-2xl border border-[#002FA7]/10 bg-white p-6 text-center shadow-sm dark:border-[#4A7BD4]/20 dark:bg-white/5">
-      <span ref={ref} className="font-data text-4xl font-bold text-[#002FA7] dark:text-[#87CEEB]">
-        {value % 1 !== 0 ? count.toFixed(1) : count}
-        {suffix}
-      </span>
-      <p className="mt-2 text-sm text-[#6B7A99] dark:text-white/50">{label}</p>
-    </div>
-  );
-}
 
 export function EcommerceSection() {
   return (

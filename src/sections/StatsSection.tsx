@@ -69,7 +69,7 @@ function StatItem({ value, suffix, label, desc }: { value: number; suffix: strin
   const isDecimal = value % 1 !== 0;
 
   return (
-    <div ref={ref} className="text-center">
+    <span ref={ref} className="text-center block">
       <div className="font-data text-4xl font-bold text-white sm:text-5xl md:text-6xl">
         {isDecimal ? count.toFixed(1) : count}
         <span className="text-[#87CEEB]">{suffix}</span>
@@ -99,7 +99,7 @@ export function StatsSection() {
         </div>
 
         <div className="mt-14 grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-6">
-          {STATS.map((stat, i) => (
+          {STATS.map((stat) => (
             <StatItem key={stat.label} {...stat} />
           ))}
         </div>
