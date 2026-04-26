@@ -1,3 +1,4 @@
+import { LoadingScreen } from '@/components/LoadingScreen';
 import { Navbar } from '@/sections/Navbar';
 import { Hero } from '@/sections/Hero';
 import { ServiceOverview } from '@/sections/ServiceOverview';
@@ -17,6 +18,7 @@ import { ScrollToTop, FloatingShare } from '@/components/ShareComponents';
 function App() {
   return (
     <div className="min-h-screen">
+      <LoadingScreen />
       <Navbar />
       <main>
         <Hero />
