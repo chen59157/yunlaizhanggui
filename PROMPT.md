@@ -113,6 +113,7 @@ yunlaizhanggui/
 │       └── counter.ts            # 访客计数 API
 ├── public/
 │   ├── favicon.svg
+│   ├── og-image.png              # 社交分享预览图
 │   └── 微信头像.png
 └── src/
     ├── main.tsx
@@ -121,9 +122,13 @@ yunlaizhanggui/
     ├── data/
     │   └── content.ts            # 所有文案数据
     ├── hooks/
-    │   └── useAnimations.tsx     # 动画 hooks
+    │   ├── useAnimations.tsx     # 动画 hooks
+    │   └── use-mobile.ts         # 移动端检测
+    ├── lib/
+    │   └── utils.ts              # 工具函数
     ├── components/
-    │   └── ShareComponents.tsx   # 分享/CTA 组件
+    │   ├── ShareComponents.tsx   # 分享/CTA/徽章组件
+    │   └── ui/                   # shadcn/ui 组件库
     └── sections/
         ├── Navbar.tsx
         ├── Hero.tsx
@@ -152,3 +157,61 @@ yunlaizhanggui/
 | 分层技术要求 | 前端框架 + Edge Functions + SEO 分开列出 |
 | 文件结构预览 | 给 AI 一个清晰的项目骨架参考 |
 | 公司信息内联 | 避免 AI 使用占位符，一次到位 |
+
+---
+
+## 迭代过程与踩坑记录
+
+### 第 1 轮：初始生成
+- AI 一次性生成了完整的项目结构和 13 个页面区块
+- Prompt 结构化程度高，生成质量整体满意
+- 初始版本功能完整，但需要后续多轮修复细节
+
+### 第 2 轮：修复 TypeScript 编译错误
+部署到 EdgeOne Pages 时，`tsc -b` 严格模式暴露了几个问题：
+
+| 文件 | 错误 | 修复 |
+|------|------|------|
+| `EcommerceSection.tsx` | TS6133: `useCounter` imported but never used | 移除未使用的 import |
+| `StatsSection.tsx` | TS2322: `useCounter` ref 类型为 `HTMLSpanElement`，用在 `<div>` 上 | 将 `<div>` 改为 `<span>`，闭合标签同步修改 |
+| `StatsSection.tsx` | TS6133: `.map()` 中 `i` 参数未使用 | 移除未使用的变量 |
+
+**教训**：Prompt 中应明确要求「TypeScript strict mode 兼容，所有变量必须使用，避免 unused import」。
+
+### 第 3 轮：修复 npm 依赖冲突
+EdgeOne CI 构建时 `npm install` 报错：
+
+```
+ERESOLVE could not resolve: kimi-plugin-inspect-react requires vite@^7.2.0
+```
+
+**原因**：项目中安装了 `kimi-plugin-inspect-react`（VS Code 插件），与 `vite@6.4.2` 不兼容。
+
+**修复**：
+1. 从 `package.json` 移除 `kimi-plugin-inspect-react`
+2. `edgeone.json` 中 `installCommand` 改为 `npm install --legacy-peer-deps`
+
+**教训**：Prompt 中应明确要求「不要安装任何非必要的 VS Code 插件依赖」。
+
+### 第 4 轮：构建命令优化
+- 原始 `edgeone.json` 没有指定 `installCommand`，EdgeOne 使用默认的 `npm install`
+- 添加 `"installCommand": "npm install --legacy-peer-deps"` 解决依赖冲突
+- 确保 `framework` 字段正确设置为 `"vite"`
+
+### 第 5 轮：视觉与体验优化
+- 添加了 OG Image（社交分享预览图）
+- 优化了 favicon SVG 为品牌化设计
+- 添加了页面加载骨架屏
+- 添加了顶部 loading 进度条
+
+---
+
+## Prompt 优化建议（给未来参赛者）
+
+1. **先写设计文档，再写 Prompt** — 把色值、字体、间距、动效等设计决策提前确定，写入 Prompt
+2. **分层迭代，不要一次到位** — 先生成基础结构和内容，再逐步添加动效和细节
+3. **TypeScript 严格模式** — 从第一天就用 strict mode，避免部署时才暴露类型错误
+4. **依赖最小化** — 只安装运行时必需的包，开发工具类依赖（如 VS Code 插件）不要混入 package.json
+5. **edgeone.json 要写全** — 特别是 `installCommand` 和 `framework` 字段
+6. **测试部署流程** — 在本地模拟 CI 环境执行 `npm run build`，确保能通过
+7. **暗黑模式从一开始就做** — 后期补 dark mode 工作量巨大，Prompt 中明确要求每个区块都适配
