@@ -76,7 +76,7 @@ function StatItem({ value, suffix, label, desc }: { value: number; suffix: strin
       </div>
       <p className="mt-2 text-lg font-semibold text-white">{label}</p>
       <p className="mt-1 text-sm text-white/50">{desc}</p>
-    </div>
+    </span>
   );
 }
 
