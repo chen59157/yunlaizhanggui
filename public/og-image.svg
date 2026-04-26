@@ -1,0 +1,116 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#002FA7"/>
+      <stop offset="50%" style="stop-color:#1A3FAA"/>
+      <stop offset="100%" style="stop-color:#4A7BD4"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#87CEEB"/>
+      <stop offset="100%" style="stop-color:#FF6B35"/>
+    </linearGradient>
+    <linearGradient id="card1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgba(255,255,255,0.15)"/>
+      <stop offset="100%" style="stop-color:rgba(255,255,255,0.05)"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  
+  <!-- Grid pattern -->
+  <g opacity="0.06">
+    <line x1="0" y1="0" x2="0" y2="630" stroke="white" stroke-width="1">
+      <animate attributeName="x1" values="0;60" dur="0.1s" fill="freeze"/>
+    </line>
+    <!-- Vertical lines -->
+    <line x1="100" y1="0" x2="100" y2="630" stroke="white" stroke-width="0.5"/>
+    <line x1="200" y1="0" x2="200" y2="630" stroke="white" stroke-width="0.5"/>
+    <line x1="300" y1="0" x2="300" y2="630" stroke="white" stroke-width="0.5"/>
+    <line x1="400" y1="0" x2="400" y2="630" stroke="white" stroke-width="0.5"/>
+    <line x1="500" y1="0" x2="500" y2="630" stroke="white" stroke-width="0.5"/>
+    <line x1="600" y1="0" x2="600" y2="630" stroke="white" stroke-width="0.5"/>
+    <line x1="700" y1="0" x2="700" y2="630" stroke="white" stroke-width="0.5"/>
+    <line x1="800" y1="0" x2="800" y2="630" stroke="white" stroke-width="0.5"/>
+    <line x1="900" y1="0" x2="900" y2="630" stroke="white" stroke-width="0.5"/>
+    <line x1="1000" y1="0" x2="1000" y2="630" stroke="white" stroke-width="0.5"/>
+    <line x1="1100" y1="0" x2="1100" y2="630" stroke="white" stroke-width="0.5"/>
+    <!-- Horizontal lines -->
+    <line x1="0" y1="100" x2="1200" y2="100" stroke="white" stroke-width="0.5"/>
+    <line x1="0" y1="200" x2="1200" y2="200" stroke="white" stroke-width="0.5"/>
+    <line x1="0" y1="300" x2="1200" y2="300" stroke="white" stroke-width="0.5"/>
+    <line x1="0" y1="400" x2="1200" y2="400" stroke="white" stroke-width="0.5"/>
+    <line x1="0" y1="500" x2="1200" y2="500" stroke="white" stroke-width="0.5"/>
+    <line x1="0" y1="600" x2="1200" y2="600" stroke="white" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Decorative circles -->
+  <circle cx="1050" cy="150" r="200" fill="rgba(255,255,255,0.03)"/>
+  <circle cx="1100" cy="500" r="150" fill="rgba(255,107,53,0.05)"/>
+  <circle cx="150" cy="500" r="100" fill="rgba(135,206,235,0.05)"/>
+  
+  <!-- Logo mark -->
+  <g transform="translate(100, 220)">
+    <rect x="0" y="0" width="56" height="56" rx="14" fill="rgba(255,255,255,0.15)"/>
+    <path d="M14 42C14 42 6 36 6 28C6 20 14 14 28 14C42 14 50 20 50 28C50 36 42 42 28 42" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M14 42L21 28L28 42" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="28" cy="28" r="3" fill="white"/>
+  </g>
+  
+  <!-- Brand name -->
+  <text x="175" y="258" font-family="'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="52" font-weight="800" fill="white">云莱掌柜</text>
+  
+  <!-- Tagline -->
+  <text x="100" y="310" font-family="'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="24" fill="rgba(255,255,255,0.7)">外卖运营 · 品牌营销 · 电商运营</text>
+  
+  <!-- Subtitle -->
+  <text x="100" y="360" font-family="'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="20" fill="rgba(255,255,255,0.5)">全链路增长引擎 — 让每一家店都成为人气王</text>
+  
+  <!-- Stats cards -->
+  <g transform="translate(100, 400)">
+    <!-- Card 1 -->
+    <rect x="0" y="0" width="180" height="100" rx="16" fill="url(#card1)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <text x="24" y="50" font-family="'DM Sans', 'Consolas', monospace" font-size="36" font-weight="700" fill="white">500+</text>
+    <text x="24" y="78" font-family="'Noto Sans SC', sans-serif" font-size="14" fill="rgba(255,255,255,0.5)">服务商家</text>
+    
+    <!-- Card 2 -->
+    <rect x="200" y="0" width="180" height="100" rx="16" fill="url(#card1)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <text x="224" y="50" font-family="'DM Sans', 'Consolas', monospace" font-size="36" font-weight="700" fill="white">40%</text>
+    <text x="224" y="78" font-family="'Noto Sans SC', sans-serif" font-size="14" fill="rgba(255,255,255,0.5)">平均业绩提升</text>
+    
+    <!-- Card 3 -->
+    <rect x="400" y="0" width="180" height="100" rx="16" fill="url(#card1)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <text x="424" y="50" font-family="'DM Sans', 'Consolas', monospace" font-size="36" font-weight="700" fill="white">4.9</text>
+    <text x="424" y="78" font-family="'Noto Sans SC', sans-serif" font-size="14" fill="rgba(255,255,255,0.5)">平均店铺评分</text>
+  </g>
+  
+  <!-- Right side: decorative data visualization -->
+  <g transform="translate(720, 150)">
+    <!-- Bar chart -->
+    <rect x="0" y="200" width="40" height="200" rx="8" fill="rgba(255,255,255,0.08)"/>
+    <rect x="0" y="100" width="40" height="300" rx="8" fill="rgba(255,255,255,0.12)"/>
+    <rect x="60" y="150" width="40" height="250" rx="8" fill="rgba(135,206,235,0.2)"/>
+    <rect x="120" y="80" width="40" height="320" rx="8" fill="rgba(135,206,235,0.3)"/>
+    <rect x="180" y="40" width="40" height="360" rx="8" fill="rgba(255,107,53,0.3)"/>
+    <rect x="240" y="120" width="40" height="280" rx="8" fill="rgba(255,107,53,0.2)"/>
+    <rect x="300" y="60" width="40" height="340" rx="8" fill="rgba(255,255,255,0.15)"/>
+    <rect x="360" y="180" width="40" height="220" rx="8" fill="rgba(255,255,255,0.1)"/>
+    
+    <!-- Trend line -->
+    <polyline points="20,180 80,130 140,70 200,30 260,90 320,50 380,160" fill="none" stroke="url(#accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Data points -->
+    <circle cx="200" cy="30" r="5" fill="#FF6B35"/>
+    <circle cx="140" cy="70" r="4" fill="#87CEEB"/>
+    <circle cx="320" cy="50" r="4" fill="#87CEEB"/>
+  </g>
+  
+  <!-- Bottom: Built with WorkBuddy -->
+  <text x="100" y="580" font-family="'Noto Sans SC', sans-serif" font-size="13" fill="rgba(255,255,255,0.3)">Built with WorkBuddy · Deployed on EdgeOne Pages</text>
+  
+  <!-- URL -->
+  <text x="1100" y="580" font-family="'DM Sans', monospace" font-size="13" fill="rgba(255,255,255,0.3)" text-anchor="end">yunlai8.com</text>
+  
+  <!-- Top accent bar -->
+  <rect x="0" y="0" width="1200" height="4" fill="url(#accent)"/>
+</svg>
