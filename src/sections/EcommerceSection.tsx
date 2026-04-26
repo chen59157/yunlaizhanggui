@@ -1,5 +1,5 @@
 import { ECOMMERCE_CAPABILITIES, ECOMMERCE_PLATFORMS, ECOMMERCE_STATS } from '@/data/content';
-import { AnimateOnScroll, useCounter } from '@/hooks/useAnimations';
+import { AnimateOnScroll } from '@/hooks/useAnimations';
 
 
 export function EcommerceSection() {
