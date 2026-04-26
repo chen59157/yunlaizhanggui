@@ -48,7 +48,7 @@ export function Footer() {
             {/* Social Icons with real icon shapes */}
             <div className="mt-6 flex gap-3">
               <a
-                href="https://github.com"
+                href="https://github.com/chen59157/yunlaizhanggui"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/5 text-white/50 transition-all duration-300 hover:bg-white/10 hover:text-white/80 hover:-translate-y-0.5"
